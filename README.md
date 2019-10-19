@@ -2,6 +2,10 @@
 Project was assign to us by Ninja Software. 
 This will teach is the skills that we need to become a fullstack or front-end developer.
 
+Plugins:
+- typescript
+- reactstrap
+
 
 ## Please see Instructions below if you want to run this project in your machine.
 
