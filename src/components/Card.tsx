@@ -1,15 +1,17 @@
 import React from "react"
-import Card from "react-bootstrap/Card"
-interface Props {}
+import { Card, StyledBody, StyledAction } from "baseui/card"
+import { Button } from "baseui/button"
 
 export default () => (
-	<Card style={{ width: "18rem" }}>
-		<Card.Body>
-			<Card.Title>Card Title</Card.Title>
-			<Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-			<Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
-			<Card.Link href="#">Card Link</Card.Link>
-			<Card.Link href="#">Another Link</Card.Link>
-		</Card.Body>
+	<Card overrides={{ Root: { style: { padding: "0px", margin: "30px" } } }} title="BTC-AUD">
+		<StyledBody>Price:$1234567</StyledBody>
+		<StyledBody>Bid:$654321</StyledBody>
+		<StyledBody>Ask:$6543212</StyledBody>
+		<StyledBody>0.06% 1hr</StyledBody>
+		<StyledAction>
+			<Button overrides={{ BaseButton: { style: { width: "30%" } } }}>View</Button>
+		</StyledAction>
 	</Card>
 )
+
+// overrides={{ Root: { style: { width: "328px" } } }}
