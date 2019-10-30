@@ -8,14 +8,14 @@ import Dashboard from "./components/pages/Dashboard"
 import Header from "./components/Header"
 import * as serviceWorker from "./serviceWorker"
 import "./index.css"
+import App from "./App"
 
 const engine = new Styletron()
 
 ReactDOM.render(
 	<StyletronProvider value={engine}>
 		<BaseProvider theme={LightTheme}>
-			<Header />
-			<LoginPage />
+			<App />
 		</BaseProvider>
 	</StyletronProvider>,
 	document.getElementById("root"),

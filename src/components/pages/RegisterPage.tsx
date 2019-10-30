@@ -6,6 +6,7 @@ import styled from "styled-components"
 import Header from "../Header"
 import { useStyletron } from "styletron-react"
 import { Block } from "baseui/block"
+import { Link } from "react-router-dom"
 
 interface Props {}
 

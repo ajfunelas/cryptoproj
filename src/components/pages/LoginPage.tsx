@@ -6,6 +6,7 @@ import styled from "styled-components"
 import Header from "../Header"
 import { useStyletron } from "styletron-react"
 import { Block } from "baseui/block"
+import { Link } from "react-router-dom"
 
 interface Props {}
 
@@ -22,13 +23,15 @@ const LoginPage: React.FC<Props> = () => {
 					},
 				}}
 			>
-				<FormControl label={() => "Username"}>
+				<FormControl label={() => "Email"}>
 					<Input size={SIZE.compact} />
 				</FormControl>
 				<FormControl label={() => "Password "}>
 					<Input size={SIZE.compact} type="password" />
 				</FormControl>
-				<Button size={SIZE.compact}>Login</Button>
+				<Link to="/dashboard">
+					<Button size={SIZE.compact}>Login</Button>
+				</Link>
 			</Block>
 		</div>
 	)

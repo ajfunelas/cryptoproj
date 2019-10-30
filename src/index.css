@@ -12,3 +12,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  background-image: url("./bg.svg");
+  background-color: #749ce4;
+  background-size: cover;
+  min-height: 100vh;
+  background-attachment: fixed;
+}

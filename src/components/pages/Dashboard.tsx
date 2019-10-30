@@ -14,12 +14,6 @@ import Paper from "@material-ui/core/Paper"
 import Grid from "@material-ui/core/Grid"
 
 const engine = new Styletron()
-// const Centered = styled("div", {
-// 	display: "flex",
-// 	justifyContent: "center",
-// 	alignItems: "center",
-// 	height: "100%",
-// })
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -37,57 +31,11 @@ const useStyles = makeStyles((theme: Theme) =>
 const Dashboard: React.FC = () => {
 	const classes = useStyles()
 	return (
-		<StyletronProvider value={engine}>
-			<BaseProvider theme={LightTheme}>
-				<Header /> {/* Navbar */}
-			</BaseProvider>
-		</StyletronProvider>
+		<div>
+			<Search />
+			<Card />
+		</div>
 	)
 }
 
 export default Dashboard
-
-// {/* <Grid container direction="row" className={classes.root} spacing={2}>
-// <Grid container justify="flex-start" item xs={8}>
-// 	{" "}
-// 	{/* Cards Grid */}
-// 	<div style={{ paddingTop: 20 }} className={classes.root}>
-// 		{" "}
-// 		{/* First Row */}
-// 		<Grid container direction="row" justify="center" alignItems="center" spacing={3}>
-// 			<Grid item xs={6}>
-// 				<Search />
-// 			</Grid>
-// 		</Grid>
-// 	</div>
-// 	<Grid container direction="row" justify="center" alignItems="center" spacing={3}>
-// 		{" "}
-// 		{/* Second Row */}
-// 		<Grid item xs>
-// 			<Card />
-// 		</Grid>
-// 		<Grid item xs>
-// 			<Card />
-// 		</Grid>
-// 		<Grid item xs>
-// 			<Card />
-// 		</Grid>
-// 	</Grid>
-// 	<Grid container direction="row" justify="center" alignItems="center" spacing={3}>
-// 		{" "}
-// 		{/* Third Row */}
-// 		<Grid item xs>
-// 			<Card />
-// 		</Grid>
-// 		<Grid item xs>
-// 			<Card />
-// 		</Grid>
-// 		<Grid item xs>
-// 			<Card />
-// 		</Grid>
-// 	</Grid>
-// </Grid>
-// <Grid container justify="center" item xs={4}>
-// 	<Card />
-// </Grid>
-// </Grid> */}
