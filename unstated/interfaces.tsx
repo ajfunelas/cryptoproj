@@ -1,6 +1,13 @@
-export interface IUser {
+export interface loginUser {
 	Id: string
 	isLoggedIn: boolean
+	username: string
+	email: string
+	password: string
+}
+export interface regisUser {
+	Id: string
+	isRegistered: boolean
 	username: string
 	email: string
 	password: string
