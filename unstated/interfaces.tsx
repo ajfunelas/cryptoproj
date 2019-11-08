@@ -13,7 +13,7 @@ export interface regisUser {
 	password: string
 }
 
-export interface IProduct {
+export interface coinInfo {
 	id: string
 	base_currency: string
 	quote_currency: string
@@ -32,11 +32,21 @@ export interface IProduct {
 	status_message: string
 }
 
-export interface ITickerData {
-	ticker_id: string
-	price: string
-	time: string
-	bid: string
-	ask: string
-	volume: string
+export interface coinData {
+	ID: string
+	Price: string
+	Time: string
+	Bid: string
+	Ask: string
+	Volume: string
+}
+
+export interface IFaves {
+	ID: string
+	Price: string
+	Time: string
+	Bid: string
+	Ask: string
+	Volume: string
+	Size: string
 }

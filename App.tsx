@@ -5,7 +5,7 @@ import RegisterPage from "./components/pages/RegisterPage"
 import Header from "./components/Header"
 import Dashboard from "./components/pages/Dashboard"
 import "./index.css"
-import bg from "../src/bg2.svg"
+// import bg from "../src/bg2.svg"
 
 const App: React.FC = () => {
 	return (

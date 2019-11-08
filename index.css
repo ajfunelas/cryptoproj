@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-image: url("./bg2.svg"); */
-  color: white;
+  color: black;
 }
 
 code {
@@ -16,7 +16,7 @@ code {
 
 .App {
   /* background-image: url("./bg.svg"); */
-  background-color: #1E1A2B;
+  background-color: #FFFFFF;
   background-size: cover;
   min-height: 100vh;
   background-attachment: fixed;
