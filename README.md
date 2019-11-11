@@ -1,9 +1,3 @@
-Current status:
-- toggleFavourites() from backend is invoking
-- newly added modals for favourites but not 
-
-
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
