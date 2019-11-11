@@ -59,7 +59,7 @@ type ShortTicker struct {
 }
 
 type UserID struct {
-	UID string `json: "uid"`
+	UID string `json: "user_id"`
 }
 
 type UserFave struct {

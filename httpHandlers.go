@@ -157,7 +157,7 @@ func (db *DbDriver) getFaves(w http.ResponseWriter, r *http.Request) {
     rows, err := db.db.Query(`SELECT tickers.id, tickers.price, tickers.time, tickers.bid, tickers.ask, tickers.volume, tickers.size 
                                     FROM tickers 
                                     INNER JOIN user_favourites ON tickers.Id=user_favourites.coin_id
-                                    WHERE user_favourites.id=$1;`, userID.UID)
+                                    WHERE user_favourites.user_id=$1;`, userID.UID)
 if err != nil {
     fmt.Println(err)
     http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -242,7 +242,7 @@ func (db *DbDriver) tglFave(w http.ResponseWriter, r *http.Request) {
 
 	} else {
         fmt.Println("Deleted")
-		sqlStatement := `DELETE FROM user_favourites WHERE id = $1 AND coin_id = $2`
+		sqlStatement := `DELETE FROM user_favourites WHERE user_id = $1 AND coin_id = $2`
 		_, err = db.db.Exec(sqlStatement, userfave.UserID, userfave.CoinID)
 		if err != nil {
 			fmt.Println(err)
