@@ -45,9 +45,9 @@ function ViewPopUp(props: Props) {
 						setGetData(undefined)
 					}}
 				>
-					Cancel
+					Close
 				</ModalButton>
-				<ModalButton>Okay</ModalButton>
+				{/* <ModalButton>Okay</ModalButton> */}
 			</ModalFooter>
 		</Modal>
 	)

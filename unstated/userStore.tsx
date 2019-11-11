@@ -41,7 +41,6 @@ export const UserStore = () => {
 			}
 		}
 	}
-
 	const tglFaves = (userId: string, coinId: string) => {
 		if (initUser) {
 			postData("http://localhost:8080/api/favourites/toggle", {
@@ -49,17 +48,12 @@ export const UserStore = () => {
 				CoinID: coinId,
 			})
 				.then(data => {
-					// data is a bool
-					console.log(data)
 					return data
 				})
 				.then(d => {
 					if (d) {
-						// api call to get the fave list
 						postData("http://localhost:8080/api/favourites/list", { uid: userId }).then(faveList => {
-							// sets new fave list
 							setUserFaves(faveList ? faveList : [])
-							// console.log(faveList)
 						})
 					}
 				})
@@ -70,7 +64,6 @@ export const UserStore = () => {
 			setUserFaves(data ? data : [])
 		})
 	}
-
 	//Card PopUp
 	const [popUp, setpopUp] = useState<boolean>(false)
 
@@ -147,7 +140,6 @@ export const UserStore = () => {
 			}
 		})
 	}
-
 	// #2 Register Init
 	const [isRegistered, setisRegistered] = useState<boolean>(false)
 	const [reg_username, reg_setUsername] = useState<string>("")
