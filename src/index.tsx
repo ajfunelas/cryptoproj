@@ -9,13 +9,16 @@ import Header from "./components/Header"
 import * as serviceWorker from "./serviceWorker"
 import "./index.css"
 import App from "./App"
+import { StoreContainer } from "./unstated/userStore"
 
 const engine = new Styletron()
 
 ReactDOM.render(
 	<StyletronProvider value={engine}>
 		<BaseProvider theme={LightTheme}>
-			<App />
+			<StoreContainer.Provider>
+				<App />
+			</StoreContainer.Provider>
 		</BaseProvider>
 	</StyletronProvider>,
 	document.getElementById("root"),
