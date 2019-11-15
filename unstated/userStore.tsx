@@ -1,9 +1,8 @@
-import React, { MouseEvent, useEffect } from "react"
+import React, { MouseEvent } from "react"
 
 import { useState } from "react"
 import { createContainer } from "unstated-next"
 import { loginUser, coinInfo, regisUser, coinData, IFaves } from "./interfaces"
-import { async } from "q"
 
 export const UserStore = () => {
 	const postData = async (url: string, body: {}) => {
@@ -33,7 +32,7 @@ export const UserStore = () => {
 			if (userFaves) {
 				return userFaves
 					.map(f => {
-						if (f.ID == prod.id) {
+						if (f.TickerId == prod.id) {
 							return prod
 						}
 					})
@@ -61,6 +60,7 @@ export const UserStore = () => {
 	}
 	const getSetFaves = async (id: string) => {
 		await postData("http://localhost:8080/api/favourites/list", { uid: id }).then(data => {
+			console.log(data)
 			setUserFaves(data ? data : [])
 		})
 	}
@@ -150,7 +150,7 @@ export const UserStore = () => {
 	const handleReg = async (evt: MouseEvent) => {
 		evt.preventDefault()
 		postData("http://localhost:8080/api/signup", { username: reg_username, email: reg_emailInput, password: reg_passwordInput }).then(data => {
-			if (data != null) {
+			if (regInputValidator) {
 				const currentUserFromSql: regisUser = {
 					Id: data.id,
 					isRegistered: true,
@@ -167,6 +167,24 @@ export const UserStore = () => {
 				alert("Email already registered!")
 			}
 		})
+	}
+
+	// #Validation
+	// Control format varifiying
+	const regInputValidator = () => {
+		if (reg_emailInput === "") {
+			return false
+		} else if (reg_passwordInput.length < 8) {
+			return false
+		} else if (!checkEmail) {
+			return false
+		}
+		return true
+	}
+
+	const checkEmail = () => {
+		const email: string = reg_emailInput
+		return /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)
 	}
 
 	// # unstated

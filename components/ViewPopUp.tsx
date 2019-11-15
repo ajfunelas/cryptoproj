@@ -1,8 +1,6 @@
 import React from "react"
 import { StoreContainer } from "../unstated/userStore"
 import { Modal, SIZE, ROLE, ModalHeader, ModalBody, ModalFooter, ModalButton } from "baseui/modal"
-import { useContainer } from "unstated-next"
-import { coinInfo, coinData } from "../unstated/interfaces"
 
 interface Props {}
 
@@ -47,7 +45,6 @@ function ViewPopUp(props: Props) {
 				>
 					Close
 				</ModalButton>
-				{/* <ModalButton>Okay</ModalButton> */}
 			</ModalFooter>
 		</Modal>
 	)

@@ -42,7 +42,7 @@ export interface coinData {
 }
 
 export interface IFaves {
-	ID: string
+	TickerId: string
 	Price: string
 	Time: string
 	Bid: string

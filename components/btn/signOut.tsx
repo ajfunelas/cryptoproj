@@ -6,8 +6,6 @@ import { StoreContainer } from "../../unstated/userStore"
 import { Drawer, ANCHOR } from "baseui/drawer"
 import { Block } from "baseui/block"
 import FvCard from "../FvCard"
-import { FaVolleyballBall } from "react-icons/fa"
-import Fave from "../pages/Fave"
 
 interface Props {}
 
@@ -43,18 +41,20 @@ const SignOut: React.FC<Props> = () => {
 				</StyledNavigationItem>
 				<Drawer isOpen={isOpen} autoFocus onClose={() => setIsOpen(false)} anchor={ANCHOR.bottom}>
 					<div style={{ height: "6rem" }}></div>
-					<h2>Favourites</h2>
-					{userFaves ? (
-						userFaves.length > 0 ? (
-							userFaves.map(Fave => {
-								return <FvCard key={Fave.ID} favo={Fave} />
-							})
+					<h2 className="fvTitle">Favourites</h2>
+					<div className="fvflex">
+						{userFaves ? (
+							userFaves.length > 0 ? (
+								userFaves.map(Fave => {
+									return <FvCard key={Fave.TickerId} favo={Fave} />
+								})
+							) : (
+								<p>No Favourites Listed</p>
+							)
 						) : (
-							<p>No Favourites Listed</p>
-						)
-					) : (
-						<img src={require("../../ripple.gif")} alt="loading..." />
-					)}
+							<img src={require("../../ripple.gif")} alt="loading..." />
+						)}
+					</div>
 				</Drawer>
 			</Block>
 		</div>

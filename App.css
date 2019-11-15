@@ -58,6 +58,7 @@
   min-width: 15rem;
   transition: 0.2s ease-in-out;
   box-shadow: 3px 3px #010058af;
+
 }
 
 .coinInfo button {
@@ -79,4 +80,24 @@
   transition: 0.2s ease-in-out;
   opacity: 1;
   cursor: pointer;
+}
+
+.fvcardInfo {
+  text-align: center;
+}
+
+.fvflex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fvTitle {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.productsGrid {
+  justify-content: center;
 }
