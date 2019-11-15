@@ -9,6 +9,10 @@ type DbDriver struct {
 	db *sqlx.DB
 }
 
+// type API struct {
+// 	dbkey  *DbDriver
+// }
+
 type Ticker struct {
 	Coin_ID string `json: trade_id"`
 	Price string `json: "price"`
